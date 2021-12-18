@@ -98,7 +98,7 @@ function sumArray(sumArr) { //eslint-disable-line
 }
 
 
-testSumArray([2, 3, 4]);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -111,14 +111,29 @@ Write a function called multiplyArray() that takes an array of numbers as its ar
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
-
+// let testArray = [2, 3, 4];
+// [2, 3, 4] === multArr
+// multArr[0] === 2
+// multArr[1] === 3
+// multArr[2] === 4
+// multiply(a,b,c)
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  let firstElement =  multiply(multArr[0], multiply(multArr[1], multArr[2])[0])[0];
+  console.log(firstElement);
+  // "The numbers 2,3,4 have a product of 24."
+
+  let secondElement = 'The numbers ' + multArr[0] +',' + multArr[1] +',' + multArr[2] + ' have a product of ' + firstElement + '.';
+  console.log(secondElement);
+
+
+
+  return [firstElement, secondElement];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
