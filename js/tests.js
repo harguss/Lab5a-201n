@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 // You should not modify anything in this file, but feel free to look through it!
