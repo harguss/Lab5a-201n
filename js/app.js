@@ -54,10 +54,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 //              1       2
-  // let sumTotal = sum(a, sum(b , c)[0])[0];
-  // let product =  multiply(a, multiply(b , c)[0])[0];
-  let sumTotal = a + b + c;
-  let product = a * b * c;
+  let sumTotal = sum(a, sum(b , c)[0])[0];
+  let product =  multiply(a, multiply(b , c)[0])[0];
+  // let sumTotal = a + b + c;
+  // let product = a * b * c;
   // console.log('sum total',sumTotal);
   // console.log('product total', product);
   let stringOne = a + ' and ' + b + ' and ' + c + ' sum to ' + sumTotal + '.';
@@ -156,17 +156,33 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+function multiplyAnyArray(dynamicArray) {
 
+  console.log('what is this? ', dynamicArray);
+  let firstElement = 1;
+
+  for(let i = 0; i < dynamicArray.length; i++){
+    firstElement = multiply(firstElement , dynamicArray[i])[0];
+    console.log(firstElement);
+    // " The numbers 1,2,3,4,5 have a product of 120."
+  }
+  let stringMessage = 'The numbers ';
+  for(let i = 0; i < dynamicArray.length; i++){
+    //add the first numbers from array  1,2,3,4,5
+    stringMessage = stringMessage + dynamicArray[i];
+    if(i < dynamicArray.length - 1){
+      stringMessage = stringMessage + ',';
+    }
+  }
+  console.log(stringMessage);
+  stringMessage += ' have a product of ' + firstElement + '.';
+  return [firstElement, stringMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
-
-
-
 
 
 
